@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     height: 120px;
-    border: 5px solid black;
+    // border: 5px solid black;
 }
 
 @mixin color-text{
@@ -23,20 +23,30 @@
     align-items: center;
     padding: 2rem;
     color: white;
-    height: 120px;
+    height: 100px;
     background-color: rgba(28,28,28,255);
 }
 
+
+@mixin a_container {
+    color: white;
+    text-decoration: none;
+}
+
 @mixin footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    height: 120px;
+    height: 100px;
     background-color: rgba(2,130,249,255);
 }
 
-@mixin a {
-    color: white;
-    text-decoration: none;
+@mixin logos_links {
+    gap: 3rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin footer_logos {
+    height: 100%;
 }
