@@ -82,19 +82,26 @@ export default {
 </script>
 
 <template>
+    <main>
+        <div class="jumbo_div">
+            <img class="jumbotron" src="../assets/img/jumbotron.jpg" alt="">
+            <span class="current_series_ban">CURRENT SERIES</span>
+        </div>
+
         <div class="bg">
             <div class="container">
                 <div class="cards_grid" >
                     <div v-for="comic in arrComics" :key="comic.series" class="card"> 
-                    <img 
+                    <img class="cards_img"
                     :src="comic.thumb" 
                     :alt="comic.series">
-                    <h6> {{ comic.series }}</h6>
+                    <h2> {{ comic.series }}</h2>
                 </div>
                 </div>
 
             </div>
         </div>
+    </main>
 </template>
 
 
@@ -112,7 +119,7 @@ export default {
 @use "../assets/styles/partials/reset" as *;
 @use "../assets/styles/partials/variables";
 
-img {
+.cards_img {
     aspect-ratio: 2/3;
     max-width: 150px;
 
@@ -127,31 +134,58 @@ img {
     background-color: rgba(28,28,28,255);
 }
 
+
+.jumbo_div {
+    height: 400px;
+    position: relative;
+}
+
+.jumbotron {
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+    object-position:top;
+}
+
+.current_series_ban {
+    background-color: #0282f9;
+    color: whitesmoke;
+    padding: 1rem;
+    bottom: 0;
+    position: absolute;
+    left: 15%;
+    bottom: -1.5rem;
+
+
+}
+
 .container {
+    padding:  4rem 0 4rem 0;
     max-width: 1200px;
     margin: auto;
-    padding: 4rem;
+
     // padding: 1rem;
 
 }
 
 .cards_grid {
     display: grid;
-    grid-template-columns: auto auto auto auto ;
-    row-gap: 4rem;
+    grid-template-columns: auto auto auto auto auto auto;
+    row-gap: 3rem;
     column-gap: 4rem;
 
 
 }
 
 .card {
-    width: 100%;
+    border: 1px solid white;
     text-align: center; 
     //CENTRA H2 DELLA CARD, CHE FORSE NON MI PIACE
 }
 
-h6 {
-    font-size: .9rem;
+h2 {
+    margin-top: .6rem;
+    font-size: 1rem;
 }
 
 
