@@ -1,4 +1,6 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-}
+@use './partials/reset' as *;
+@forward './partials/variables'; //rende visibile il contenuto di variables anche al file che importa general.scss
+
+
+
+

@@ -18,14 +18,12 @@
     height: 80px;
 }
 
-@mixin container {
-    display: flex;
-    align-items: center;
-    padding: 2rem;
-    color: white;
-    height: 100px;
-    background-color: rgba(28,28,28,255);
-}
+// @mixin container {
+//     display: flex;
+//     align-items: center;
+//     color: white;
+//     background-color: rgba(28,28,28,255);
+// }
 
 
 @mixin a_container {
