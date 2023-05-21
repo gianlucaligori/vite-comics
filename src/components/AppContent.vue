@@ -1,4 +1,7 @@
 <script>
+
+ import AppCard from './AppCard.vue';
+
 export default {
     data () {
     return {
@@ -77,7 +80,11 @@ export default {
 	}
 ]
     }
-}
+},
+	components : {
+	
+		AppCard,
+	}
 }
 </script>
 
@@ -91,14 +98,19 @@ export default {
         <div class="bg">
             <div class="container">
                 <div class="cards_grid" >
-                    <div v-for="comic in arrComics" :key="comic.series" class="card"> 
-                    <img class="cards_img"
-                    :src="comic.thumb" 
-                    :alt="comic.series">
-                    <h2> {{ comic.series }}</h2>
-                </div>
-                </div>
+                    <!-- <div v-for="comic in arrComics" :key="comic.series" class="card"> 
+						<img class="cards_img"
+						:src="comic.thumb" 
+						:alt="comic.series">
+						<h2> {{ comic.series }}</h2>
+                	</div> -->
 
+					<AppCard 
+					v-for="comic in arrComics" 
+					:key="comic.series"
+					:thumb="comic.thumb"
+					:series="comic.series"/>
+                </div>
             </div>
         </div>
     </main>
@@ -119,11 +131,7 @@ export default {
 @use "../assets/styles/partials/reset" as *;
 @use "../assets/styles/partials/variables";
 
-.cards_img {
-    aspect-ratio: 2/3;
-    max-width: 150px;
 
-}
 
 // .container {
 //     @include container
@@ -177,16 +185,9 @@ export default {
 
 }
 
-.card {
-    border: 1px solid white;
-    text-align: center; 
-    //CENTRA H2 DELLA CARD, CHE FORSE NON MI PIACE
-}
 
-h2 {
-    margin-top: .6rem;
-    font-size: 1rem;
-}
+
+
 
 
 
